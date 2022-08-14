@@ -4,7 +4,7 @@ import React from 'react';
 
 const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => {
     return (
-        <div className="coin-container">
+        <div className="coin-container dark:bg-gray-900">
             <div className="coin-row">
                 <div className="coin">
                     <img src={image} alt="crypto"/>

@@ -31,7 +31,7 @@ export const Search = () => {
     marketcap: string;
   }
 
-  return <div className="coin-app">
+  return <div className="coin-app dark:bg-gray-900">
           <div className="coin-search">
             <h1 className="coin-text">Cryptocurrency Prices</h1>
             <form>
