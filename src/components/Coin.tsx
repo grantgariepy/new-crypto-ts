@@ -1,17 +1,9 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Chart } from './Chart';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme,  styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Container from '@mui/material/Container';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -66,7 +58,7 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
           minWidth: 300,
           mb: 3,
         }}>
-          <Grid container spacing={2} columns={12}  mt={1}>
+          <Grid container spacing={1} columns={12}  mt={1}>
             <Grid 
               item xs={4}
               display="flex"
@@ -79,7 +71,7 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
                 </Typography>
                 <Typography 
                   textAlign="left"
-                  variant="h3" 
+                  variant="h5" 
                   component="div">
                     {name}
                 </Typography>
@@ -97,7 +89,7 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
           display="flex"
           direction="row" 
           alignItems="center"
-          justifyContent="start">
+          justifyContent="space-between">
                   <Typography 
                     variant="body2" 
                     color="text.secondary">
