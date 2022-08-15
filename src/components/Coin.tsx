@@ -6,6 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import { Chart } from './Chart';
+
 
 interface Card extends Card{
   expand: boolean;
@@ -27,7 +31,7 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
     setExpanded(!expanded);
   };
     return (
-      <Card sx={{ maxWidth: 800 }} 
+      <Card 
             
             onClick={handleExpandClick}
             aria-expanded={expanded}
@@ -35,13 +39,13 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
       >
         
         <CardActionArea >
+          <CardContent>
           <CardMedia
             component="img"
             alt="coin"
             height="140"
             image={image}
             />
-          <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {name}
             </Typography>
@@ -78,14 +82,9 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
         </CardActionArea>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            {/* <Box sx={{ flexGrow: 2 }}>
-            <Grid container>
-              <Grid item xs={12}>
-                <Chart/>
-              </Grid>
+            
+                <Chart />
               
-            </Grid>
-          </Box> */}
           </CardContent>
         </Collapse>
       </Card>
