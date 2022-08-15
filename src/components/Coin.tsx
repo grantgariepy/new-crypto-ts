@@ -5,8 +5,12 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
 import { Chart } from './Chart';
+import PropTypes, { InferProps } from "prop-types";
 
-const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => {
+
+const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}:
+  InferProps<typeof Coin.propTypes>
+  ) => {
   const [expanded, setExpanded] = React.useState();
 
   const handleExpandClick = () => {
@@ -47,3 +51,15 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}) => 
     );
 }
 export default Coin
+
+Coin.propTypes = {
+  Coin: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  symbol: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  volume: PropTypes.number.isRequired,
+  priceChange: PropTypes.number.isRequired,
+  marketcap: PropTypes.number.isRequired,
+  expanded: PropTypes.bool,
+};
