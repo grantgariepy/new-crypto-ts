@@ -43,7 +43,7 @@ export const Search = () => {
     flexDirection="column"
     
   >
-    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange}  />
+    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} sx={{width:340, m:"auto"}} />
     {filteredCoins.map(coin => {
       return <Coin
         key={coin.id} 
