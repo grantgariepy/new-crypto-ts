@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Search from "../components/Search"
 import Nav from "../components/Nav"
-import Switcher from "../components/darkMode/Switcher";
 
 
 const Home: NextPage = () => {
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
           </h1>
         <Search />     
         </main>
-        <Switcher />
     </>
   );
 };

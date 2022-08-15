@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Coin from './Coin';
 import axios from "axios";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
     
 export const Search = () => {
 
@@ -31,27 +33,30 @@ export const Search = () => {
     marketcap: string;
   }
 
-  return <div className="coin-app dark:bg-gray-900">
-          <div className="coin-search">
-            <h1 className="coin-text">Cryptocurrency Prices</h1>
-            <form>
-              <input type="text" className="coin-input" placeholder="Search" onChange={handleChange}/>
-            </form>
-          </div> 
-          {filteredCoins.map(coin => {
-            return <Coin
-              key={coin.id} 
-              name={coin.name} 
-              image={coin.image}
-              symbol={coin.symbol}
-              volume={coin.total_volume}
-              price={coin.current_price}
-              priceChange={coin.price_change_percentage_24h}
-              marketcap={coin.market_cap}
-              />
-          })}
-        </div>;
-    
+  return  (
+  <Box
+    component="form"
+    sx={{
+      '& > :not(style)': { m: 1, width: '25ch' },
+    }}
+    noValidate
+    autoComplete="off"
+  >
+    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} />
+    {filteredCoins.map(coin => {
+      return <Coin
+        key={coin.id} 
+        name={coin.name} 
+        image={coin.image}
+        symbol={coin.symbol}
+        volume={coin.total_volume}
+        price={coin.current_price}
+        priceChange={coin.price_change_percentage_24h}
+        marketcap={coin.market_cap}
+        />
+    })}
+  </Box>
+  );
 }
 
   
