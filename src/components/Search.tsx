@@ -36,13 +36,14 @@ export const Search = () => {
   return  (
   <Box
     component="form"
-    sx={{
-      '& > :not(style)': { m: 1, width: '25ch' },
-    }}
     noValidate
     autoComplete="off"
+    m="auto"
+    display="flex" justifyContent="center"
+    flexDirection="column"
+    
   >
-    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} />
+    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange}  />
     {filteredCoins.map(coin => {
       return <Coin
         key={coin.id} 
