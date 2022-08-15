@@ -22,17 +22,6 @@ export const Search = () => {
 
   const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase() ))
 
-  type Coins = {
-    id: number;
-    name: string;
-    image: string;
-    symbol: string;
-    price: string;
-    volume: string;
-    priceChange: string;
-    marketcap: string;
-  }
-
   return  (
   <Box
     component="form"
@@ -41,25 +30,22 @@ export const Search = () => {
     m="auto"
     display="flex" justifyContent="center"
     flexDirection="column"
-    
   >
     <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} sx={{width:340, m:"auto"}} />
-    {filteredCoins.map(coin => {
-      return <Coin
-        key={coin.id} 
-        name={coin.name} 
-        image={coin.image}
-        symbol={coin.symbol}
-        volume={coin.total_volume}
-        price={coin.current_price}
-        priceChange={coin.price_change_percentage_24h}
-        marketcap={coin.market_cap}
-        />
-    })}
+      {filteredCoins.map(coin => {
+        return <Coin
+          key={coin.id}
+          name={coin.name} 
+          image={coin.image}
+          symbol={coin.symbol}
+          volume={coin.total_volume}
+          price={coin.current_price}
+          priceChange={coin.price_change_percentage_24h}
+          marketcap={coin.market_cap}
+          />
+      })}
   </Box>
   );
 }
-
-  
     
 export default Search;
