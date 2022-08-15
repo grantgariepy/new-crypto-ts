@@ -15,10 +15,10 @@ const Home: NextPage = () => {
       </Head>
         <Nav />
         
-        <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4 dark:bg-gray-900">
-          <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700 dark:bg-gray-900">
-            <span className="text-blue-300">Crypto Prices</span>
-          </h1>
+        <main className="">
+          <h2 className="">
+            Crypto Prices
+          </h2>
         <Search />     
         </main>
     </>
