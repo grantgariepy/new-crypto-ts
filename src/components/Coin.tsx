@@ -34,7 +34,7 @@ const Coin = ({ name, image, symbol, price} :
               </Typography>
             </CardContent>
             <CardContent  sx={{display:"flex", justifyContent:"space-between"}}>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" sx={{fontWeight: 'bold'}}>
               ${price.toLocaleString()}
               </Typography>
             </CardContent>
