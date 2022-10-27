@@ -31,17 +31,17 @@ export const Search = () => {
     display="flex" justifyContent="center"
     flexDirection="column"
   >
-    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} sx={{width:340, m:"auto"}} />
+    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={handleChange} sx={{width:1, m:"auto"}} />
       {filteredCoins.map(coin => {
         return <Coin
           key={coin.id}
           name={coin.name} 
           image={coin.image}
           symbol={coin.symbol}
-          volume={coin.total_volume}
+          // volume={coin.total_volume}
           price={coin.current_price}
-          priceChange={coin.price_change_percentage_24h}
-          marketcap={coin.market_cap}
+          // priceChange={coin.price_change_percentage_24h}
+          // marketcap={coin.market_cap}
           />
       })}
   </Box>
