@@ -8,19 +8,19 @@ import { Chart } from './Chart';
 import PropTypes, { InferProps } from "prop-types";
 
 
-const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}:
+export const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}:
   InferProps<typeof Coin.propTypes>
   ) => {
-  const [expanded, setExpanded] = React.useState();
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    const [expanded, setExpanded] = React.useState();
+    
+    const handleExpandClick = () => {
+      setExpanded(!expanded);
+    };
     return (
       <>
         <Card 
           onClick={handleExpandClick}
-          sx= {{ width:340,  display: 'flex', mx:"auto", mb:1, mt: 1}}
+          sx= {{ width:1,  display: 'flex', mx:"auto", mb:1, mt: 1}}
           >
           <CardActionArea sx={{display:"flex", direction:"row", justifyContent:"space-between" }}>
             <CardContent  sx={{display:"flex", }} >
@@ -49,17 +49,17 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap}:
         </Collapse>
       </>
     );
-}
-export default Coin
-
-Coin.propTypes = {
-  Coin: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  symbol: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  volume: PropTypes.number.isRequired,
-  priceChange: PropTypes.number.isRequired,
-  marketcap: PropTypes.number.isRequired,
-  expanded: PropTypes.bool,
-};
+  }
+  Coin.propTypes = {
+    Coin: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    symbol: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    volume: PropTypes.number.isRequired,
+    priceChange: PropTypes.number.isRequired,
+    marketcap: PropTypes.number.isRequired,
+    expanded: PropTypes.bool.isRequired,
+  };
+  export default Coin
+  
