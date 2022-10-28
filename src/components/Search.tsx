@@ -40,6 +40,7 @@ export const Search = () => {
           symbol={coin.symbol}
           // volume={coin.total_volume}
           price={coin.current_price}
+          id={coin.id}
           // priceChange={coin.price_change_percentage_24h}
           // marketcap={coin.market_cap}
           />

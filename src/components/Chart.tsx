@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
+import axios from "axios";
 
 ChartJS.register(
   CategoryScale,
@@ -21,6 +22,20 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+
+  // const [coinData, setCoinData] = useState<any[]>([])
+
+  // useEffect(() => {
+  //   const fetchPrices = async () =>{
+  //     axios.get("https://api.coingecko.com/api/v3/coins/" + {id}['id'] + "/ohlc?vs_currency=usd&days=1")
+  //     .then(res => {
+  //       setCoinData(res.data)
+  //       console.log(data)
+  //     }).catch(error => console.log(error))
+  //   }
+  //   fetchPrices()
+  // }, []);
 
 export const options = {
   responsive: true,
@@ -38,6 +53,7 @@ export const options = {
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 export const data = {
+  
   labels,
   datasets: [
     {
