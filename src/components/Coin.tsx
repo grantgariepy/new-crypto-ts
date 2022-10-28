@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect}  from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
 import { Chart } from './Chart';
+import axios from "axios";
 
 
-const Coin = ({ name, image, symbol, price} : 
-  {name:string, image:string, symbol:string, price:number,}) => {
+const Coin = ({ name, image, symbol, price, id} : 
+  {name:string, image:string, symbol:string, price:number, id:string}) => {
 
     const [expanded, setExpanded] = React.useState<boolean>();
     
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };
+    
     return (
       <>
         <Card 
@@ -43,7 +45,7 @@ const Coin = ({ name, image, symbol, price} :
 
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Chart />
+            <Chart/>
           </CardContent>
         </Collapse>
       </>
