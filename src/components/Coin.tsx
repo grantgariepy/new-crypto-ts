@@ -11,9 +11,22 @@ import axios from "axios";
 const Coin = ({ name, image, symbol, price, id} : 
   {name:string, image:string, symbol:string, price:number, id:string}) => {
 
+    // console.log(id);
     const [expanded, setExpanded] = React.useState<boolean>();
+
+    const [coinInfo, setCoinInfo] = useState<any[]>([]);
+
     
+    const getInfo = () => {
+      axios.get("https://api.coingecko.com/api/v3/coins/"+id+"/ohlc?vs_currency=usd&days=365")
+      .then(res => {
+        setCoinInfo(res.data)
+      }).catch(error => console.log(error));
+      
+      console.log(coinInfo);
+    }    
     const handleExpandClick = () => {
+      getInfo();
       setExpanded(!expanded);
     };
     
